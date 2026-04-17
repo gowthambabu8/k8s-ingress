@@ -20,10 +20,10 @@ aws iam create-policy \
 Create IAM role and ServiceAccount for AWS Load Balancer
 ```
 eksctl create iamserviceaccount \
---cluster=roboshop \
+--cluster=roboshop1 \
 --namespace=kube-system \
 --name=aws-load-balancer-controller \
---attach-policy-arn=arn:aws:iam::007670671403:policy/AWSLoadBalancerControllerIAMPolicy" \
+--attach-policy-arn=arn:aws:iam::<account_id>:policy/AWSLoadBalancerControllerIAMPolicy \
 --override-existing-serviceaccounts \
 --approve
 ```
