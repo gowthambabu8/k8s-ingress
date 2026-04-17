@@ -27,3 +27,14 @@ eksctl create iamserviceaccount \
 --override-existing-serviceaccounts \
 --approve
 ```
+Install drivers via HELM
+
+Add EKS chart to helm
+```
+helm repo add eks https://aws.github.io/eks-charts
+```
+
+Install helm if using IAM roles
+```
+helm install aws-load-balancer-controller eks/aws-load-balancer-controller -n kube-system --set clusterName=roboshop1 --set serviceAccount.create=false --set serviceAccount.name=aws-load-balancer-controller
+'''
